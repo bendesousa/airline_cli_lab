@@ -50,9 +50,11 @@ public class Flight {
     }
 
     @Override
-
-
-
+    public String toString(){
+        return "Flight{" + "destination='" + this.destination +
+                "', id='" + this.id + "'}";
+    }
+    
 }
 
 
