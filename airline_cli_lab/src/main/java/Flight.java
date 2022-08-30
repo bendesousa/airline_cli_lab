@@ -49,12 +49,16 @@ public class Flight {
 
     }
 
+    public int countPassengerList(){
+        return this.passengerList.size();
+    }
+
     @Override
     public String toString(){
         return "Flight{" + "destination='" + this.destination +
                 "', id='" + this.id + "'}";
     }
-    
+
 }
 
 
