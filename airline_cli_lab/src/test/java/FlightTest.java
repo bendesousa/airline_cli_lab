@@ -19,14 +19,14 @@ public class FlightTest {
         String expected = "A123";
         assertEquals(actual, expected);
     }
-    @Disabled
+
     @Test
     public void passengerList_start(){
         int actual = flight.countPassengerList();
         int expected = 0;
         assertEquals(actual, expected);
     }
-    @Disabled
+
     @Test
     public void canAddPassenger(){
         flight.addPassenger();
