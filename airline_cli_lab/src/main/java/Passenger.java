@@ -2,12 +2,12 @@ public class Passenger {
 
     private String name;
     private int phoneNumber;
-    private int id;
+    private int passengerId;
 
     public Passenger (String name, int phoneNumber){
         this.name = name;
         this.phoneNumber = phoneNumber;
-        this.id = (int) (100*Math.random());
+        this.passengerId = (int) (100*Math.random());
     }
 
     public String getName() {
@@ -27,10 +27,10 @@ public class Passenger {
     }
 
     public int getId() {
-        return id;
+        return passengerId;
     }
 
     public void setId() {
-        this.id = (int) (100*Math.random());
+        this.passengerId = (int) (100*Math.random());
     }
 }
