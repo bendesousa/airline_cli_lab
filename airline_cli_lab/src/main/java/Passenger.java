@@ -33,4 +33,6 @@ public class Passenger {
     public void setId() {
         this.passengerId = (int) (100*Math.random());
     }
+    
+    
 }
