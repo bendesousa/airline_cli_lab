@@ -18,7 +18,11 @@ public class Option {
                 chooseOption(airline);
                 break;
             case "cancelFlight":
-                airline.cancelFlight();
+                try {
+                    airline.cancelFlight();
+                } catch (Exception exception){
+                    exception.printStackTrace();
+                }
                 chooseOption(airline);
                 break;
             case "displayFlight":
@@ -31,7 +35,6 @@ public class Option {
                     flight =  airline.chooseFlight();
                 } catch (Exception exception){
                     flight = new Flight("");
-//                    flight = exception.getMessage();
                     exception.printStackTrace();
                 }
                 airline.bookFlight(flight);

@@ -37,7 +37,7 @@ public class Airline {
         this.flightList.add(flight);
     }
 
-    public String cancelFlight (){
+    public String cancelFlight () throws Exception{
         Scanner reader = new Scanner(System.in);
         System.out.println("Type in the flight id: ");
 
@@ -46,11 +46,11 @@ public class Airline {
         for(Flight flight : flightList){
             if(id.equals(flight.getId())){
                 this.flightList.remove(flight);
-                break;
+                return "This flight has been cancelled.";
             }
         }
 
-        return "This flight has been cancelled.";
+        throw new Exception("Flight not found!");
     }
 
     public Flight chooseFlight() throws Exception{
