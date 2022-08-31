@@ -4,22 +4,26 @@ public class Option {
 
     public static void chooseOption(Airline airline){
         Scanner reader = new Scanner(System.in);
-        System.out.println("Available option: search, addFlight, cancelFlight, displayFlight, bookFlight");
+        System.out.println("Available option: search, addFlight, cancelFlight, displayFlight, bookFlight, break");
 
         String chosenOption = reader.nextLine();
 
         switch (chosenOption){
             case "search":
                 SearchFunction.searchFlightDestination(airline.getFlightList());
+                chooseOption(airline);
                 break;
             case "addFlight":
                 airline.addFlight();
+                chooseOption(airline);
                 break;
             case "cancelFlight":
                 airline.cancelFlight();
+                chooseOption(airline);
                 break;
             case "displayFlight":
                 airline.displayFlights();
+                chooseOption(airline);
                 break;
             case "bookFlight":
                 Flight flight;
@@ -31,6 +35,9 @@ public class Option {
                     exception.printStackTrace();
                 }
                 airline.bookFlight(flight);
+                chooseOption(airline);
+                break;
+            case "break":
                 break;
         }
     }
