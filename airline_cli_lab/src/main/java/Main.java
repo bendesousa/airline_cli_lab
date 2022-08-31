@@ -10,6 +10,7 @@ public class Main {
         airline.addFlight();
 
         airline.displayFlights();
+        SearchFunction.searchFlightDestination(airline.getFlightList());
 
         String cancelFlight = airline.cancelFlight();
         System.out.println(cancelFlight);

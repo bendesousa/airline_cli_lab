@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class SearchFunction {
 
-    public static void SearchFlightDestination(ArrayList<Flight> flightList){
+    public static void searchFlightDestination(ArrayList<Flight> flightList){
         Scanner reader = new Scanner(System.in);
         System.out.println("where do you want to go?");
         String destination = reader.nextLine();
