@@ -16,14 +16,7 @@ public class FlightTest {
     public void setup(){
         flight = new Flight("Hong Kong");
     }
-
-    @Test
-    public void test(){
-        String actual = flight.getId();
-        String expected = "123";
-        assertEquals(actual, expected);
-    }
-
+    
     @Test
     public void passengerList_start(){
         int actual = flight.countPassengerList();
