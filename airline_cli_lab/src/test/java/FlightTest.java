@@ -16,7 +16,7 @@ public class FlightTest {
     public void setup(){
         flight = new Flight("Hong Kong");
     }
-    
+
     @Test
     public void passengerList_start(){
         int actual = flight.countPassengerList();

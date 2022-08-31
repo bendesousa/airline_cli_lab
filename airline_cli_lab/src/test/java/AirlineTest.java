@@ -45,44 +45,55 @@ public class AirlineTest {
         assertEquals(actual, expected);
     }
 
-//    Testing for when flight IDs were not random
-//    @Test
-//    public void canCancelFlight(){
-//        String inputDetail = "Seattle";
-//        InputStream in = new ByteArrayInputStream(inputDetail.getBytes());
-//        System.setIn(in);
-//        this.airline.addFlight();
-//        String input = flight.getId();
-//        InputStream in_1 = new ByteArrayInputStream(input.getBytes());
-//        System.setIn(in_1);
-//        this.airline.cancelFlight();
-//        int actual = airline.getFlightList().size();
-//        int expected = 0;
-//        assertEquals(actual, expected);
-//    }
-//
-//    @Test
-//    public void canCancelMultipleFlights(){
-//        String inputDetail_1 = "Seattle";
-//        InputStream in_1 = new ByteArrayInputStream(inputDetail_1.getBytes());
-//        System.setIn(in_1);
-//        this.airline.addFlight();
-//        String inputDetail_2 = "HongKong";
-//        InputStream in_2 = new ByteArrayInputStream(inputDetail_2.getBytes());
-//        System.setIn(in_2);
-//        this.airline.addFlight();
-//        String input = "12345";
-//        InputStream in_3 = new ByteArrayInputStream(input.getBytes());
-//        System.setIn(in_3);
-//        this.airline.cancelFlight();
-//        String input_0 = "67893";
-//        InputStream in_4 = new ByteArrayInputStream(input_0.getBytes());
-//        System.setIn(in_4);
-//        this.airline.cancelFlight();
-//        int actual = airline.getFlightList().size();
-//        int expected = 0;
-//        assertEquals(actual, expected);
-//    }
+    @Test
+    public void canCancelFlight(){
+        String inputDetail = "Seattle";
+        InputStream in = new ByteArrayInputStream(inputDetail.getBytes());
+        System.setIn(in);
+        this.airline.addFlight();
+        String input = airline.getFlightList().get(0).getId();
+        InputStream in_1 = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in_1);
+        try {
+            airline.cancelFlight();
+        } catch (Exception exception){
+            exception.printStackTrace();
+        }
+        int actual = airline.getFlightList().size();
+        int expected = 0;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void canCancelMultipleFlights(){
+        String inputDetail_1 = "Seattle";
+        InputStream in_1 = new ByteArrayInputStream(inputDetail_1.getBytes());
+        System.setIn(in_1);
+        this.airline.addFlight();
+        String inputDetail_2 = "HongKong";
+        InputStream in_2 = new ByteArrayInputStream(inputDetail_2.getBytes());
+        System.setIn(in_2);
+        this.airline.addFlight();
+        String input = airline.getFlightList().get(0).getId();;
+        InputStream in_3 = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in_3);
+        try {
+            airline.cancelFlight();
+        } catch (Exception exception){
+            exception.printStackTrace();
+        }
+        String input_0 = airline.getFlightList().get(0).getId();;
+        InputStream in_4 = new ByteArrayInputStream(input_0.getBytes());
+        System.setIn(in_4);
+        try {
+            airline.cancelFlight();
+        } catch (Exception exception){
+            exception.printStackTrace();
+        }
+        int actual = airline.getFlightList().size();
+        int expected = 0;
+        assertEquals(actual, expected);
+    }
 
     @Test
     public void canBookFlight(){
