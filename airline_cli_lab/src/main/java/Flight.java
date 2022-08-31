@@ -37,17 +37,8 @@ public class Flight {
         return passengerList;
     }
 
-    public void addPassenger() {
-        Scanner reader = new Scanner(System.in);
-        System.out.println("Please type in your name and mobile number (spilt by a space): ");
-
-        String input = reader.nextLine();
-        String[] passengerDetail = input.split(" ");
-
-        String passengerName = passengerDetail[0];
-        int passengerMobileNumber = Integer.parseInt(passengerDetail[1]);
-
-        Passenger passenger = new Passenger(passengerName, passengerMobileNumber);
+    public void addPassenger(Passenger passenger) {
+        
         passengerList.add(passenger);
 
     }

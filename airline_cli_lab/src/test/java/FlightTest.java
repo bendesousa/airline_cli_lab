@@ -36,7 +36,7 @@ public class FlightTest {
         String inputName = "John 12345";
         InputStream in = new ByteArrayInputStream(inputName.getBytes());
         System.setIn(in);
-        flight.addPassenger();
+        flight.addPassenger(new Passenger("John", 12345));
         int actual = flight.countPassengerList();
         int expected = 1;
         assertEquals(actual, expected);
