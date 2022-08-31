@@ -22,7 +22,7 @@ public class Option {
                 airline.displayFlights();
                 break;
             case "bookFlight":
-                airline.bookFlight(flight);
+                airline.bookFlight(Flight);
                 break;
         }
     }

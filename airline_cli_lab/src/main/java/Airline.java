@@ -53,6 +53,21 @@ public class Airline {
         return "This flight has been cancelled.";
     }
 
+    public Flight chooseFlight() throws Exception{
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Type in the flight id");
+
+        String id = reader.nextLine();
+
+        for(Flight flight : this.flightList){
+            if(id.equals(flight.getId())){
+                return flight;
+            }
+        }
+
+        throw new Exception("The flight is not found!");
+    }
+
     public String bookFlight(Flight flight){
         Scanner reader = new Scanner(System.in);
         System.out.println("Please type in your name and mobile number (split by a space): ");
