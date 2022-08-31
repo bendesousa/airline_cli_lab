@@ -38,6 +38,7 @@ public class FlightTest {
         int expected = 1;
         assertEquals(actual, expected);
     }
+
     @Test
     public void canAddMultiplePassenger(){
         flight.addPassenger(new Passenger("John", 12345));

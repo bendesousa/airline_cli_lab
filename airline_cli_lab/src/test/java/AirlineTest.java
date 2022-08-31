@@ -10,7 +10,6 @@ public class AirlineTest {
 
     private Airline airline;
     private  Flight flight;
-
     private Flight flight1;
 
     @BeforeEach
@@ -26,7 +25,6 @@ public class AirlineTest {
         int actual = airline.getFlightList().size();
         int expected = 1;
         assertEquals(actual, expected);
-
     }
 
     @Test
@@ -36,7 +34,6 @@ public class AirlineTest {
         int actual = airline.getFlightList().size();
         int expected = 2;
         assertEquals(actual, expected);
-
     }
 
     @Test

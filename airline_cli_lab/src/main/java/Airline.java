@@ -38,7 +38,7 @@ public class Airline {
 
     public String bookFlight(Flight flight){
         Scanner reader = new Scanner(System.in);
-        System.out.println("Please type in your name and mobile number (spilt by a space): ");
+        System.out.println("Please type in your name and mobile number (split by a space): ");
 
         String input = reader.nextLine();
         String[] passengerDetail = input.split(" ");
@@ -50,7 +50,7 @@ public class Airline {
 
         flight.addPassenger(passenger);
 
-        return passengerName + "has been booked onto the flight.";
+        return passengerName + " has been booked onto the flight.";
     }
 
     public void displayFlights(){
