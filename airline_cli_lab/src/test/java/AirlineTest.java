@@ -45,7 +45,7 @@ public class AirlineTest {
         assertEquals(actual, expected);
     }
 
-//    Testing for when flight IDs where not random
+//    Testing for when flight IDs were not random
 //    @Test
 //    public void canCancelFlight(){
 //        String inputDetail = "Seattle";
