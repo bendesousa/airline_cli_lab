@@ -33,9 +33,6 @@ public class FlightTest {
 
     @Test
     public void canAddPassenger(){
-        String inputName = "John 12345";
-        InputStream in = new ByteArrayInputStream(inputName.getBytes());
-        System.setIn(in);
         flight.addPassenger(new Passenger("John", 12345));
         int actual = flight.countPassengerList();
         int expected = 1;
