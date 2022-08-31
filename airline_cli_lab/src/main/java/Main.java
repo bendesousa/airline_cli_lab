@@ -3,8 +3,8 @@ public class Main {
     public static void main(String[] args) {
 
         Airline airline = new Airline("BNA");
-        Flight flight_hk = new Flight("HongKong", "A123");
-        Flight flight_seattle = new Flight("Seattle", "A988");
+        Flight flight_hk = new Flight("HongKong");
+        Flight flight_seattle = new Flight("Seattle");
 
         airline.addFlight();
         airline.addFlight();

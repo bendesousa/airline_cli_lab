@@ -31,14 +31,11 @@ public class Airline {
 
     public void addFlight (){
         Scanner reader = new Scanner(System.in);
-        System.out.println("Type in the flight destination and id (split by a space): ");
+        System.out.println("Type in the flight destination: ");
 
-        String input = reader.nextLine();
-        String[] flightDetail = input.split(" ");
+        String destination = reader.nextLine();
 
-        String destination = flightDetail[0];
-        String id = flightDetail[1];
-        Flight flight = new Flight(destination, id);
+        Flight flight = new Flight(destination);
         this.flightList.add(flight);
     }
 

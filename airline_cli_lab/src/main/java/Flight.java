@@ -6,10 +6,12 @@ public class Flight {
     private String destination;
     private String id;
     private ArrayList<Passenger> passengerList;
+    private RandomFlightId randomId;
 
-    public Flight (String destination, String id){
+    public Flight (String destination){
         this.destination = destination;
-        this.id = id;
+        this.randomId = new RandomFlightId() ;
+        this.id = randomId.nextString();
         this.passengerList = new ArrayList<>();
     }
 
