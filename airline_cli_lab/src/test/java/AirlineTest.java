@@ -94,7 +94,4 @@ public class AirlineTest {
         int expected = 1;
         assertEquals(actual, expected);
     }
-
-
-
 }
