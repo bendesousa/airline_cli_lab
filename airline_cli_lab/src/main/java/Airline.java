@@ -52,4 +52,11 @@ public class Airline {
 
         return passengerName + "has been booked onto the flight.";
     }
+
+    public void displayFlights(){
+        for (Flight flight : flightList){
+            System.out.println(flight.toString());
+        }
+    }
+
 }
