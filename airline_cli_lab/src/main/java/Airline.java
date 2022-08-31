@@ -69,6 +69,9 @@ public class Airline {
     }
 
     public String bookFlight(Flight flight){
+        if(flight.getDestination().isEmpty()){
+            return "Flight not found";
+        }
         Scanner reader = new Scanner(System.in);
         System.out.println("Please type in your name and mobile number (split by a space): ");
 
