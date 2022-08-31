@@ -1,3 +1,5 @@
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -27,12 +29,34 @@ public class Airline {
         this.flightList = flightList;
     }
 
-    public void addFlight (Flight flight){
+    public void addFlight (){
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Type in the flight destination and id (split by a space): ");
+
+        String input = reader.nextLine();
+        String[] flightDetail = input.split(" ");
+        
+        String destination = flightDetail[0];
+        String id = flightDetail[1];
+        Flight flight = new Flight(destination, id);
         this.flightList.add(flight);
     }
 
-    public String cancelFlight (Flight flight){
-        this.flightList.remove(flight);
+    public String cancelFlight (){
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Type in the flight id: ");
+
+        String id = reader.nextLine();
+
+        for(Flight flight : flightList){
+            if(id.equals(flight.getId())){
+                this.flightList.remove(flight);
+                break;
+            }
+        }
+
+//        Flight flight = new Flight(destination, id);
+//        this.flightList.remove(flight);
         return "This flight has been cancelled.";
     }
 

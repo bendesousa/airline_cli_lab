@@ -21,7 +21,10 @@ public class AirlineTest {
     
     @Test
     public void canAddFlight(){
-        this.airline.addFlight(flight);
+        String inputName = "Seattle 12345";
+        InputStream in = new ByteArrayInputStream(inputName.getBytes());
+        System.setIn(in);
+        this.airline.addFlight();
         int actual = airline.getFlightList().size();
         int expected = 1;
         assertEquals(actual, expected);
@@ -29,8 +32,14 @@ public class AirlineTest {
 
     @Test
     public void canAddMultipleFlights(){
-        this.airline.addFlight(flight1);
-        this.airline.addFlight(flight);
+        String inputName = "Seattle 12345";
+        InputStream in = new ByteArrayInputStream(inputName.getBytes());
+        System.setIn(in);
+        this.airline.addFlight();
+        String input = "Seattle 12345";
+        InputStream in_1 = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in_1);
+        this.airline.addFlight();
         int actual = airline.getFlightList().size();
         int expected = 2;
         assertEquals(actual, expected);
@@ -38,8 +47,14 @@ public class AirlineTest {
 
     @Test
     public void canCancelFlight(){
-        this.airline.addFlight(flight);
-        this.airline.cancelFlight(flight);
+        String inputDetail = "Seattle 12345";
+        InputStream in = new ByteArrayInputStream(inputDetail.getBytes());
+        System.setIn(in);
+        this.airline.addFlight();
+        String input = "12345";
+        InputStream in_1 = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in_1);
+        this.airline.cancelFlight();
         int actual = airline.getFlightList().size();
         int expected = 0;
         assertEquals(actual, expected);
@@ -47,10 +62,22 @@ public class AirlineTest {
 
     @Test
     public void canCancelMultipleFlights(){
-        this.airline.addFlight(flight);
-        this.airline.addFlight(flight1);
-        this.airline.cancelFlight(flight);
-        this.airline.cancelFlight(flight1);
+        String inputDetail_1 = "Seattle 12345";
+        InputStream in_1 = new ByteArrayInputStream(inputDetail_1.getBytes());
+        System.setIn(in_1);
+        this.airline.addFlight();
+        String inputDetail_2 = "HongKong 67893";
+        InputStream in_2 = new ByteArrayInputStream(inputDetail_2.getBytes());
+        System.setIn(in_2);
+        this.airline.addFlight();
+        String input = "12345";
+        InputStream in_3 = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in_3);
+        this.airline.cancelFlight();
+        String input_0 = "67893";
+        InputStream in_4 = new ByteArrayInputStream(input_0.getBytes());
+        System.setIn(in_4);
+        this.airline.cancelFlight();
         int actual = airline.getFlightList().size();
         int expected = 0;
         assertEquals(actual, expected);

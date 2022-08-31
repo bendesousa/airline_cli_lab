@@ -6,8 +6,8 @@ public class Main {
         Flight flight_hk = new Flight("Hong Kong", "A123");
         Flight flight_seattle = new Flight("Seattle", "A988");
 
-        airline.addFlight(flight_hk);
-        airline.addFlight(flight_seattle);
+        airline.addFlight();
+        airline.addFlight();
 
         String bookedFlight = airline.bookFlight(flight_hk);
         System.out.println(bookedFlight);
