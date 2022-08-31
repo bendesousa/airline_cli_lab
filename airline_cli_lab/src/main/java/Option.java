@@ -22,7 +22,15 @@ public class Option {
                 airline.displayFlights();
                 break;
             case "bookFlight":
-                airline.bookFlight(Flight);
+                Flight flight;
+                try {
+                    flight =  airline.chooseFlight();
+                } catch (Exception exception){
+                    flight = new Flight("");
+//                    flight = exception.getMessage();
+                    exception.printStackTrace();
+                }
+                airline.bookFlight(flight);
                 break;
         }
     }

@@ -6,6 +6,8 @@ public class Main {
         Flight flight_hk = new Flight("HongKong");
         Flight flight_seattle = new Flight("Seattle");
 
+        Option.chooseOption(airline);
+
         airline.addFlight();
         airline.addFlight();
 
