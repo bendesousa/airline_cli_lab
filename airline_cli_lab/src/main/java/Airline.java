@@ -35,7 +35,7 @@ public class Airline {
 
         String input = reader.nextLine();
         String[] flightDetail = input.split(" ");
-        
+
         String destination = flightDetail[0];
         String id = flightDetail[1];
         Flight flight = new Flight(destination, id);
@@ -55,8 +55,6 @@ public class Airline {
             }
         }
 
-//        Flight flight = new Flight(destination, id);
-//        this.flightList.remove(flight);
         return "This flight has been cancelled.";
     }
 
